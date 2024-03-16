@@ -47,6 +47,8 @@ struct ContentView: View {
     func themeChooser(_ name: String, theme: [String]) -> some View {
         Button {
             emojis = theme
+            emojis += emojis
+            emojis = emojis.shuffled()
         } label: {
             Text(name)
         }
