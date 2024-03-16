@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["👻", "🕷️", "🕸️", "😈", "💀", "🎃", "🧙", "👹", "👺"]
+    let halloween = ["👻", "🕷️", "🕸️", "😈", "💀", "🎃", "🧙", "👹", "👺"]
+    let vehicle = ["🚗", "🚙", "🏎️", "🚕", "🚓", "🚋", "🚃", "🚠", "🚡"]
+    let nature = ["🌲", "💐", "🌺", "🌷", "☘️", "🍄", "🍁", "🪴", "🪷"]
+    @State var emojis: [String] = []
     
     var body: some View {
         VStack {
@@ -16,6 +19,7 @@ struct ContentView: View {
             ScrollView {
                 cards
             }
+            themeChoosers
         }
         .padding()
     }
@@ -28,6 +32,36 @@ struct ContentView: View {
             }
         }
         .foregroundColor(.orange)
+    }
+    
+    var themeChoosers: some View {
+        HStack {
+            halloweenChooser
+            Spacer()
+            vehicleChooser
+            Spacer()
+            natureChooser
+        }
+    }
+    
+    func themeChooser(_ name: String, theme: [String]) -> some View {
+        Button {
+            emojis = theme
+        } label: {
+            Text(name)
+        }
+    }
+    
+    var halloweenChooser: some View {
+        themeChooser("Halloween", theme: halloween)
+    }
+    
+    var vehicleChooser: some View {
+        themeChooser("Vehicle", theme: vehicle)
+    }
+    
+    var natureChooser: some View {
+        themeChooser("Nature", theme: nature)
     }
 }
 
