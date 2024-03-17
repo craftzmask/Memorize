@@ -9,9 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     let halloween = ["👻", "🕷️", "🕸️", "😈", "💀", "🎃", "🧙", "👹", "👺"]
+    let halloweenThemeColor = Color.orange
+    
     let vehicle = ["🚗", "🚙", "🏎️", "🚕", "🚓", "🚋", "🚃", "🚠", "🚡"]
+    let vehicleThemeColor = Color.red
+    
     let nature = ["🌲", "💐", "🌺", "🌷", "☘️", "🍄", "🍁", "🪴", "🪷"]
+    let natureThemeColor = Color.green
+    
     @State var emojis: [String] = []
+    @State var themeColor = Color.accentColor
     
     var body: some View {
         VStack {
@@ -31,7 +38,7 @@ struct ContentView: View {
                     .aspectRatio(2/3, contentMode: .fit)
             }
         }
-        .foregroundColor(.orange)
+        .foregroundColor(themeColor)
     }
     
     var themeChoosers: some View {
@@ -44,11 +51,12 @@ struct ContentView: View {
         }
     }
     
-    func themeChooser(_ name: String, symbol: String, theme: [String]) -> some View {
+    func themeChooser(_ name: String, symbol: String, theme: [String], color: Color) -> some View {
         Button {
             emojis = theme
             emojis += emojis
             emojis = emojis.shuffled()
+            themeColor = color
         } label: {
             VStack {
                 Image(systemName: symbol)
@@ -61,15 +69,15 @@ struct ContentView: View {
     }
     
     var halloweenChooser: some View {
-        themeChooser("Halloween", symbol: "flame", theme: halloween)
+        themeChooser("Halloween", symbol: "flame", theme: halloween, color: halloweenThemeColor)
     }
     
     var vehicleChooser: some View {
-        themeChooser("Vehicle", symbol: "car", theme: vehicle)
+        themeChooser("Vehicle", symbol: "car", theme: vehicle, color: vehicleThemeColor)
     }
     
     var natureChooser: some View {
-        themeChooser("Nature", symbol: "tree", theme: nature)
+        themeChooser("Nature", symbol: "tree", theme: nature, color: natureThemeColor)
     }
 }
 
