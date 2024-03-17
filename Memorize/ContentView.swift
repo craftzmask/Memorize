@@ -35,7 +35,7 @@ struct ContentView: View {
     }
     
     var themeChoosers: some View {
-        HStack {
+        HStack(alignment: .lastTextBaseline) {
             halloweenChooser
             Spacer()
             vehicleChooser
@@ -44,26 +44,32 @@ struct ContentView: View {
         }
     }
     
-    func themeChooser(_ name: String, theme: [String]) -> some View {
+    func themeChooser(_ name: String, symbol: String, theme: [String]) -> some View {
         Button {
             emojis = theme
             emojis += emojis
             emojis = emojis.shuffled()
         } label: {
-            Text(name)
+            VStack {
+                Image(systemName: symbol)
+                    .font(.title)
+                    .imageScale(.large)
+                Text(name)
+                    .font(.subheadline)
+            }
         }
     }
     
     var halloweenChooser: some View {
-        themeChooser("Halloween", theme: halloween)
+        themeChooser("Halloween", symbol: "flame", theme: halloween)
     }
     
     var vehicleChooser: some View {
-        themeChooser("Vehicle", theme: vehicle)
+        themeChooser("Vehicle", symbol: "car", theme: vehicle)
     }
     
     var natureChooser: some View {
-        themeChooser("Nature", theme: nature)
+        themeChooser("Nature", symbol: "tree", theme: nature)
     }
 }
 
