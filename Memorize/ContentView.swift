@@ -20,6 +20,10 @@ struct ContentView: View {
     @State var emojis: [String] = []
     @State var themeColor = Color.accentColor
     
+    var cardWidth: Double {
+        340 / Double(emojis.count * 2).squareRoot()
+    }
+    
     var body: some View {
         VStack {
             Text("Memorize!").font(.largeTitle)
@@ -32,7 +36,7 @@ struct ContentView: View {
     }
     
     var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: cardWidth))]) {
             ForEach(emojis.indices, id: \.self) { index in
                 CardView(content: emojis[index])
                     .aspectRatio(2/3, contentMode: .fit)
