@@ -19,8 +19,38 @@ extension Theme {
         Theme(
             name: "Halloween",
             emojis: ["👻", "🕷️", "🕸️", "😈", "💀", "🎃", "🧙", "👹", "👺"],
-            numberOfPairs: 2,
+            numberOfPairs: 10,
             color: "orange"
+        ),
+        Theme(
+            name: "Vehicle",
+            emojis: ["🚗", "🚙", "🏎️", "🚕", "🚓", "🚋", "🚃", "🚠", "🚡"],
+            numberOfPairs: 10,
+            color: "red"
+        ),
+        Theme(
+            name: "Nature",
+            emojis: ["🌲", "💐", "🌺", "🌷", "☘️", "🍄", "🍁", "🪴", "🪷"],
+            numberOfPairs: 10,
+            color: "green"
+        ),
+        Theme(
+            name: "Animal",
+            emojis: ["🐶","🐭", "🐹", "🐰", "🐱", "🦊", "🐷", "🐼", "🐻‍❄️", "🐮"],
+            numberOfPairs: 10,
+            color: "brown"
+        ),
+        Theme(
+            name: "Building",
+            emojis: ["🏢", "🏫", "💒", "🏛️", "🏭", "🏦", "🏣", "🏫", "🕍"],
+            numberOfPairs: 10,
+            color: "gray"
+        ),
+        Theme(
+            name: "Food",
+            emojis: ["🍖", "🍗", "🌭", "🌮", "🍜", "🥓", "🥨", "🥩", "🍣"],
+            numberOfPairs: 10,
+            color: "yellow"
         )
     ]
 }
