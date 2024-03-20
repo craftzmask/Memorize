@@ -19,6 +19,10 @@ struct EmojiMemoryGameView: View {
             ScrollView {
                 cards.animation(.default, value: viewModel.cards)
             }
+            
+            Spacer()
+            
+            newGame
         }
         .padding()
     }
@@ -35,6 +39,12 @@ struct EmojiMemoryGameView: View {
             }
         }
         .foregroundColor(.orange)
+    }
+    
+    var newGame: some View {
+        Button("New Game") {
+            viewModel.newGame()
+        }
     }
 }
 
