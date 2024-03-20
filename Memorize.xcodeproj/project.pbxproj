@@ -13,6 +13,7 @@
 		B42709202BA5666F007C4805 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B427091F2BA5666F007C4805 /* Preview Assets.xcassets */; };
 		B4B09B2B2BAA7C6D002E3D15 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B09B2A2BAA7C6D002E3D15 /* MemoryGame.swift */; };
 		B4B09B2D2BAA7D47002E3D15 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B09B2C2BAA7D47002E3D15 /* EmojiMemoryGame.swift */; };
+		B4B09B2F2BAAB145002E3D15 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B09B2E2BAAB145002E3D15 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		B427091F2BA5666F007C4805 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4B09B2A2BAA7C6D002E3D15 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		B4B09B2C2BAA7D47002E3D15 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		B4B09B2E2BAAB145002E3D15 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				B427091E2BA5666F007C4805 /* Preview Content */,
 				B4B09B2A2BAA7C6D002E3D15 /* MemoryGame.swift */,
 				B4B09B2C2BAA7D47002E3D15 /* EmojiMemoryGame.swift */,
+				B4B09B2E2BAAB145002E3D15 /* Theme.swift */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				B4B09B2B2BAA7C6D002E3D15 /* MemoryGame.swift in Sources */,
 				B427091B2BA5666E007C4805 /* EmojiMemoryGameView.swift in Sources */,
+				B4B09B2F2BAAB145002E3D15 /* Theme.swift in Sources */,
 				B42709192BA5666E007C4805 /* MemorizeApp.swift in Sources */,
 				B4B09B2D2BAA7D47002E3D15 /* EmojiMemoryGame.swift in Sources */,
 			);

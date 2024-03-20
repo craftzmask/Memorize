@@ -6,20 +6,34 @@
 //
 
 import Foundation
+import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    private static let emojis = ["👻", "🕷️", "🕸️", "😈", "💀", "🎃", "🧙", "👹", "👺"]
-    
-    private static func createMemoryGame() -> MemoryGame<String> {
+    private static func createMemoryGame(from theme: Theme) -> MemoryGame<String> {
         MemoryGame(numberOfPairsOfCards: 6) { pairIndex in
-            emojis[pairIndex]
+            theme.emojis[pairIndex]
         }
     }
     
-    @Published private var model = createMemoryGame()
+    private var theme: Theme
+    @Published private var model: MemoryGame<String>
+    
+    init() {
+        theme = Theme.builtin[0]
+        model = EmojiMemoryGame.createMemoryGame(from: theme)
+    }
     
     var cards: [MemoryGame<String>.Card] {
         model.cards
+    }
+    
+    var themeColor: Color {
+        switch theme.color {
+        case "orange":
+            Color.orange
+        default:
+            Color.accentColor
+        }
     }
     
     // MARK: - Intents
@@ -29,6 +43,6 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     func newGame() {
-        model = EmojiMemoryGame.createMemoryGame()
+        model = EmojiMemoryGame.createMemoryGame(from: theme)
     }
 }
