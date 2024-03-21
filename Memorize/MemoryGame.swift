@@ -11,12 +11,14 @@ struct MemoryGame<CardContent: Equatable> {
     
     private(set) var cards: [Card]
     
-    init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
+    init(numberOfPairsOfCards: Int, cardContentFactory: () -> CardContent) {
         cards = []
         for pairIndex in 0..<max(2, numberOfPairsOfCards) {
-            let content = cardContentFactory(pairIndex)
-            cards.append(Card(content: content, id: "\(pairIndex + 1)a"))
-            cards.append(Card(content: content, id: "\(pairIndex + 1)b"))
+            let content = cardContentFactory()
+            if !cards.map({ $0.content }).contains(content) {
+                cards.append(Card(content: content, id: "\(pairIndex + 1)a"))
+                cards.append(Card(content: content, id: "\(pairIndex + 1)b"))
+            }
         }
         shuffle()
     }
@@ -47,7 +49,7 @@ struct MemoryGame<CardContent: Equatable> {
     }
     
     struct Card: Identifiable, Equatable {
-        var isFaceUp = false
+        var isFaceUp = true
         var isMatched = false
         let content: CardContent
         

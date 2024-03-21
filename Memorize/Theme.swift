@@ -19,19 +19,19 @@ extension Theme {
         Theme(
             name: "Halloween",
             emojis: ["👻", "🕷️", "🕸️", "😈", "💀", "🎃", "🧙", "👹", "👺"],
-            numberOfPairs: 10,
+            numberOfPairs: 4,
             color: "orange"
         ),
         Theme(
             name: "Vehicle",
             emojis: ["🚗", "🚙", "🏎️", "🚕", "🚓", "🚋", "🚃", "🚠", "🚡"],
-            numberOfPairs: 10,
+            numberOfPairs: 4,
             color: "red"
         ),
         Theme(
             name: "Nature",
             emojis: ["🌲", "💐", "🌺", "🌷", "☘️", "🍄", "🍁", "🪴", "🪷"],
-            numberOfPairs: 10,
+            numberOfPairs: 4,
             color: "green"
         ),
         Theme(
