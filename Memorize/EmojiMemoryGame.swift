@@ -27,6 +27,10 @@ class EmojiMemoryGame: ObservableObject {
         model.cards
     }
     
+    var themeName: String {
+        theme.name
+    }
+    
     var themeColor: Color {
         switch theme.color {
         case "orange":
