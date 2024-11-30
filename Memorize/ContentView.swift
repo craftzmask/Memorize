@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     let halloweenTheme = ["👻", "🎃", "🕷️", "😈", "💀", "🕸️", "🧙", "🙀", "👹", "😱", "☠️", "🍭"]
-    let animalTheme = ["🐶", "🐱", "🐭", "🐹", "🐰", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁", "🐷"]
-    let vehicleTheme = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎️", "🚓", "🚒", "🛻", "🚐", "🚚", "🚛"]
+    let animalTheme = ["🐶", "🐱", "🐭", "🐹", "🐰", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁", "🐷", "🐵", "🐔", "🐧"]
+    let vehicleTheme = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎️", "🚓", "🚒", "🛻", "🚐", "🚚", "🚛", "🚜", "🚝", "🚞", "🚟", "🚠", "🚡", "🚢", "🚣", "🚤"]
     
     @State var emojis: [String] = []
     
@@ -20,15 +20,8 @@ struct ContentView: View {
             ScrollView {
                 cards
             }
-            
             Spacer()
-            HStack {
-                themeChooser(title: "Halloween", theme: halloweenTheme)
-                Spacer()
-                themeChooser(title: "Animals", theme: animalTheme)
-                Spacer()
-                themeChooser(title: "Vehicles", theme: vehicleTheme)
-            }
+            themeChoosers
         }
         .padding()
     }
@@ -45,7 +38,17 @@ struct ContentView: View {
     
     func themeChooser(title: String, theme: [String]) -> some View {
         Button(title) {
-            emojis = theme
+            emojis = theme + theme
+        }
+    }
+    
+    var themeChoosers: some View {
+        HStack {
+            themeChooser(title: "Halloween", theme: halloweenTheme)
+            Spacer()
+            themeChooser(title: "Animals", theme: animalTheme)
+            Spacer()
+            themeChooser(title: "Vehicles", theme: vehicleTheme)
         }
     }
 }
