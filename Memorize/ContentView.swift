@@ -36,20 +36,28 @@ struct ContentView: View {
         .foregroundStyle(.orange)
     }
     
-    func themeChooser(title: String, theme: [String]) -> some View {
-        Button(title) {
+    func themeChooser(title: String, symbol: String, theme: [String]) -> some View {
+        Button {
             emojis = theme + theme
             emojis = emojis.shuffled()
+        } label: {
+            VStack {
+                Image(systemName: symbol)
+                    .imageScale(.large)
+                    .font(.title3)
+                Text(title)
+                    .font(.caption2)
+            }
         }
     }
     
     var themeChoosers: some View {
         HStack {
-            themeChooser(title: "Halloween", theme: halloweenTheme)
+            themeChooser(title: "Halloween", symbol: "flame", theme: halloweenTheme)
             Spacer()
-            themeChooser(title: "Animals", theme: animalTheme)
+            themeChooser(title: "Animals", symbol: "pawprint", theme: animalTheme)
             Spacer()
-            themeChooser(title: "Vehicles", theme: vehicleTheme)
+            themeChooser(title: "Vehicles", symbol: "car", theme: vehicleTheme)
         }
     }
 }
