@@ -52,7 +52,7 @@ struct ContentView: View {
     }
     
     var themeChoosers: some View {
-        HStack {
+        HStack(alignment: .lastTextBaseline) {
             themeChooser(title: "Halloween", symbol: "flame", theme: halloweenTheme)
             Spacer()
             themeChooser(title: "Animals", symbol: "pawprint", theme: animalTheme)
